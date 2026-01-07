@@ -1,0 +1,54 @@
+[project]
+name = "ASN-Label-Generator"
+version = "0.1.0"
+description = "Tooling to generate .pdf files with ASN (Archive Serial Number) labels."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "reportlab>=4.1.0",
+    "reportlab_qrcode>=0.1.4",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.12.0",
+    "ruff>=0.14.10",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 119
+
+[tool.ruff.lint]
+select = [
+    "W", # https://docs.astral.sh/ruff/rules/#pycodestyle-e-w
+    "F", # https://docs.astral.sh/ruff/rules/#pyflakes-f
+    "N", # https://docs.astral.sh/ruff/rules/#pep8-naming-n
+    "RET", # https://docs.astral.sh/ruff/rules/#flake8-return-ret
+    "I", # https://docs.astral.sh/ruff/rules/#isort-i
+    "UP", # https://docs.astral.sh/ruff/rules/#pyupgrade-up
+    "COM", # https://docs.astral.sh/ruff/rules/#flake8-commas-com
+    "EXE", # https://docs.astral.sh/ruff/rules/#flake8-executable-exe
+    "ISC", # https://docs.astral.sh/ruff/rules/#flake8-implicit-str-concat-isc
+    "ICN", # https://docs.astral.sh/ruff/rules/#flake8-import-conventions-icn
+    "G201", # https://docs.astral.sh/ruff/rules/#flake8-logging-format-g
+    "INP", # https://docs.astral.sh/ruff/rules/#flake8-no-pep420-inp
+    "PIE", # https://docs.astral.sh/ruff/rules/#flake8-pie-pie
+    "Q", # https://docs.astral.sh/ruff/rules/#flake8-quotes-q
+    "RSE", # https://docs.astral.sh/ruff/rules/#flake8-raise-rse
+    "SIM", # https://docs.astral.sh/ruff/rules/#flake8-simplify-sim
+    "TID", # https://docs.astral.sh/ruff/rules/#flake8-tidy-imports-tid
+    "TCH", # https://docs.astral.sh/ruff/rules/#flake8-type-checking-tch
+    "PLC", # https://docs.astral.sh/ruff/rules/#pylint-pl
+    "PLE", # https://docs.astral.sh/ruff/rules/#pylint-pl
+    "RUF", # https://docs.astral.sh/ruff/rules/#ruff-specific-rules-ruf
+    "FLY", # https://docs.astral.sh/ruff/rules/#flynt-fly
+    "PTH", # https://docs.astral.sh/ruff/rules/#flake8-use-pathlib-pth
+]
+ignore = ["DJ001", "SIM105", "RUF012"]
+exclude = ["*/migrations/*.py"]
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.black]
+line-length = 119

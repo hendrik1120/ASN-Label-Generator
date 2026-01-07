@@ -1,2 +1,0 @@
-reportlab
-reportlab_qrcode
